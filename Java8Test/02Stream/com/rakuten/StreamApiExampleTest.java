@@ -24,7 +24,7 @@ class StreamApiUses{
 	 * Different ways to create a stream
 	 */
 	public void buildStreams() {
-		//Using Stream.of(val1, val2, val3Åc.)
+		//Using Stream.of(val1, val2, val3ÔøΩc.)
 		Stream<Integer> stream = Stream.of(1,2,3,4,5);
 		System.out.println("1: -----------elebration of StreamBuilder using Stream.of(values)---------- ");
 		stream.forEach(e -> System.out.println(e));
@@ -116,6 +116,7 @@ class StreamApiUses{
 public class StreamApiExampleTest {
 
 	public static void main(String[] args) {
+		System.out.println("Testing");
 		StreamApiUses streamApi = new StreamApiUses(); 
 		streamApi.buildStreams();
 		streamApi.convertStream2Collections();
