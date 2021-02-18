@@ -1,0 +1,12 @@
+Chintamani
+Male
+30
+Archana
+Female
+25
+Aadhya
+Female
+2
+Prasad
+Male
+29
