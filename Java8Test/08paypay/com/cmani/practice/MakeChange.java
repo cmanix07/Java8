@@ -1,8 +1,11 @@
 package com.cmani.practice;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MakeChange {
+
+    DecimalFormat money = new DecimalFormat("$0.00");
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
