@@ -1,4 +1,4 @@
-package com.cmani.funcation;
+package com.cmani.practice.funcation;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;

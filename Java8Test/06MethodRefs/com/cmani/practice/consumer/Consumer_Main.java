@@ -1,4 +1,4 @@
-package com.cmani.consumer;
+package com.cmani.practice.consumer;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;

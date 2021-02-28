@@ -2,11 +2,13 @@ package com.cmani.practice;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Main {
+public class CoinNameChangeRegister {
 
 
     public static List<String> calculateChangeAmount(int pp, int ch) {
@@ -107,6 +109,76 @@ public class Main {
 
         System.out.println(String.join(",", result));
 
+        Map<String,Integer> output = calculateChange(15.29,16.00);
+        output.forEach((key, value) -> System.out.println(key+"  "+ value));
+
         //  }
+    }
+
+    public enum CoinsName{
+        ONE_HUNDRED  ("ONE HUNDRED",100.00),
+        FIFTY ("FIFTY",50.00),
+        TWENTY("TWENTY",20.00),
+        TEN("TEN",10.00),
+        FIVE("FIVE",5.00),
+        TWO("TWO",2.00),
+        ONE("ONE",1.00),
+        HALF_DOLLAR("HALF DOLLAR",0.50),
+        QUARTER("QUARTER",.25),
+        DIME("DIME",.10),
+        NICKEL("NICKEL",.05),
+        PENNY("PENNY",.01);
+        //DEFAULT("ZERO",0.00);
+
+        private final String key;
+        private final double value;
+
+
+        CoinsName(String key, double value) {
+            this.key=key;
+            this.value=value;
+        }
+        public String getKey(){
+            return key;
+        }
+        public double getValue(){
+            return value;
+        }
+
+        private static Map<String,CoinsName> reverseLookup = Arrays.stream(CoinsName.values()).collect(Collectors.toMap(CoinsName::getKey, Function.identity()));
+
+        public static CoinsName getCoinStatus(String key){
+            return CoinsName.reverseLookup.get(key);
+        }
+
+    }
+
+    public static Map<String,Integer> calculateChange(Double pp, Double ch){
+        Map<String,Integer> output =  new HashMap<>();
+        DecimalFormat formatter = new DecimalFormat("0.00");
+
+        //cover to integer and perform operation
+        Integer change = (int)(Double.parseDouble(formatter.format(ch - pp)) * 100);
+        if((change%100) < 0){
+            output.put("ERROR",change);
+        }else if((change%100) == 0 ){
+            output.put("ZERO",change);
+        }else {
+            Iterator<CoinsName> it = Arrays.stream(CoinsName.values()).iterator();
+            while (it.hasNext()) {
+                CoinsName coinsName = it.next();
+                int coinValueInt = (int)(Double.parseDouble(formatter.format(coinsName.value)) * 100);
+                int noOfCoinsReturned = change/coinValueInt;
+                Integer amount = change - coinValueInt*noOfCoinsReturned;
+                if (amount >= 0 && noOfCoinsReturned > 0) {
+                    output.put(coinsName.getKey(),noOfCoinsReturned);
+                    change = amount;
+                }
+
+            }
+        }
+
+        return output;
+
     }
 }

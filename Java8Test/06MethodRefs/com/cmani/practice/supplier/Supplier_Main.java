@@ -1,4 +1,4 @@
-package com.cmani.supplier;
+package com.cmani.practice.supplier;
 
 import java.util.function.Supplier;
 

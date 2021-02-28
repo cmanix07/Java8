@@ -1,10 +1,10 @@
-package com.cmani.combinatorpattern;
+package com.cmani.practice.combinatorpattern;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.function.Function;
 
-import static com.cmani.combinatorpattern.CustomerRegistrationValidator.ValidationResult.*;
+import static com.cmani.practice.combinatorpattern.CustomerRegistrationValidator.ValidationResult.*;
 
     public interface CustomerRegistrationValidator extends Function<Customer, CustomerRegistrationValidator.ValidationResult> {
 

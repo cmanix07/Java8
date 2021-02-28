@@ -1,4 +1,4 @@
-package com.cmani.optional;
+package com.cmani.practice.optional;
 
 import java.util.Optional;
 

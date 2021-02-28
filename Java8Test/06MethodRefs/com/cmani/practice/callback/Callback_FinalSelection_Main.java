@@ -1,4 +1,4 @@
-package com.cmani.callback;
+package com.cmani.practice.callback;
 
 import java.util.function.Consumer;
 

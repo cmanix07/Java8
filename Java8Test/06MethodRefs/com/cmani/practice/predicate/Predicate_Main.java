@@ -1,4 +1,4 @@
-package com.cmani.predicate;
+package com.cmani.practice.predicate;
 
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;

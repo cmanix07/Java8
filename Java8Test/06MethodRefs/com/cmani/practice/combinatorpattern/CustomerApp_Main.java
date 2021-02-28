@@ -1,11 +1,6 @@
-package com.cmani.combinatorpattern;
-
-import com.cmani.combinatorpattern.CustomerRegistrationValidator.ValidationResult;
+package com.cmani.practice.combinatorpattern;
 
 import java.time.LocalDate;
-
-import static com.cmani.combinatorpattern.CustomerRegistrationValidator.*;
-import static com.cmani.combinatorpattern.CustomerRegistrationValidator.ValidationResult.*;
 
 public class CustomerApp_Main {
 
@@ -21,13 +16,13 @@ public class CustomerApp_Main {
         //Using combinatorPattern
         Customer customer2 = new Customer("Aadhya","addhya@email.com",
                 "7795203204",LocalDate.of(2019,01,15));
-            ValidationResult result= isEmailValid()
-                    .and(isPhoneNumberValid())
-                    .and(isAnAdult())
+            CustomerRegistrationValidator.ValidationResult result= CustomerRegistrationValidator.isEmailValid()
+                    .and(CustomerRegistrationValidator.isPhoneNumberValid())
+                    .and(CustomerRegistrationValidator.isAnAdult())
                     .apply(customer2);
 
         System.out.println(result);
-            if(!result.equals(SUCCESS)){
+            if(!result.equals(CustomerRegistrationValidator.ValidationResult.SUCCESS)){
                throw  new IllegalArgumentException(result.name());
             }
     }

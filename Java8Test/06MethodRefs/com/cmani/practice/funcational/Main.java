@@ -1,11 +1,11 @@
-package com.cmani.funcational;
+package com.cmani.practice.funcational;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.cmani.funcational.Main.Gender.*;
-import java.util.List;
+import static com.cmani.practice.funcational.Main.Gender.*;
+
 import java.util.stream.Collectors;
 
 public class Main {

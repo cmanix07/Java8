@@ -1,8 +1,7 @@
-package com.cmani.model.com.cmani.main;
+package com.cmani.practice.model.com.cmani.main;
 
-import com.cmani.model.Person;
-import com.cmani.spliterator.PeopleSpliterator;
-import jdk.swing.interop.SwingInterOpUtils;
+import com.cmani.practice.model.Person;
+import com.cmani.practice.spliterator.PeopleSpliterator;
 
 import java.io.IOException;
 import java.nio.file.Files;

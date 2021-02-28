@@ -1,4 +1,4 @@
-package com.cmani.combinatorpattern;
+package com.cmani.practice.combinatorpattern;
 
 import java.time.LocalDate;
 

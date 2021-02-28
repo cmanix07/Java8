@@ -1,4 +1,4 @@
-package com.cmani.model;
+package com.cmani.practice.model;
 
 public class Person {
 

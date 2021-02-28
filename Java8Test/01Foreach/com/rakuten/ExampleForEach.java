@@ -11,16 +11,7 @@ The Java forEach is a utility method to iterate over a collection or stream and 
 
 */
 class ForEach4Stream{
-	
-	/**
-	 * Method to apply filter and print only even number using stream and foreach @ java1.8
-	 */
-	public void forEachPrintEven() {
-		ArrayList<Integer> numberList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
-		Consumer<Integer> action = System.out::println;
-		numberList.stream().filter(e -> e%2 ==0).forEach(action);
-	}
-	
+
 	/**
 	 * How to iterate using foreach and stream on list
 	 */
@@ -28,6 +19,15 @@ class ForEach4Stream{
 		ArrayList<Integer> numberList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
 		Consumer<Integer> action = System.out::println;
 		numberList.stream().forEach(action);
+	}
+
+	/**
+	 * Method to apply filter and print only even number using stream and foreach @ java1.8
+	 */
+	public void forEachPrintEven() {
+		ArrayList<Integer> numberList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
+		Consumer<Integer> action = System.out::println;
+		numberList.stream().filter(e -> e%2 ==0).forEach(action);
 	}
 	/**
 	 * Foreach uses for Map on based on Entryset, values, keys @java1.8  

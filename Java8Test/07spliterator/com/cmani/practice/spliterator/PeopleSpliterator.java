@@ -1,8 +1,7 @@
-package com.cmani.spliterator;
+package com.cmani.practice.spliterator;
 
-import com.cmani.model.Person;
+import com.cmani.practice.model.Person;
 
-import javax.xml.namespace.QName;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
