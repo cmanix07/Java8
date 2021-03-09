@@ -16,7 +16,8 @@ public class LRUCacheUsingLinkedHashMap {
 
     public void putToCache(int key, int value){
         if (cache.size() >= CAPACITY) {
-            cache.remove(cache.entrySet().iterator().next().getKey());
+            int removalKey = cache.entrySet().iterator().next().getKey();
+            cache.remove(removalKey);
         }
         cache.put(key,value);
     }
